@@ -6,4 +6,11 @@ router.get('/', function(req, res, next) {
   res.send({ message: "OK" });
 });
 
+router.get('/:todos', function(req, res, next) {
+  res.send(
+    console.log(func.getAll('users'))
+    );
+});
+
+
 module.exports = router;
