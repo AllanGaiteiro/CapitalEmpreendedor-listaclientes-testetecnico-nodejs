@@ -1,0 +1,45 @@
+<h1>Add Client</h1>
+
+<br>
+<div class="card">
+    <div class="card-body">
+
+        <form action="/admin/categorias/nova" method="post">
+            <br>
+            <h3>Personal data</h3>
+            <br>
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name" placeholder="customer name" class="form-control">
+
+            <label for="email">email:</label>
+            <input type="text" id="email" name="email" placeholder="customer email" class="form-control">
+
+            <label for="phone">phone:</label>
+            <input type="text" id="phone" name="phone" placeholder=" customer phone" class="form-control">
+
+            <br>
+            <h3>
+                Business Data
+            </h3>
+            <br>
+
+            <label for="revenue"> revenue:</label>
+            <input type="number" id="revenue" name="revenue" placeholder="revenue " class="form-control">
+
+            <label for="isActive">is Active:
+                <input type="checkbox" id="isActive" name="isActive" placeholder="is active ">
+            </label>
+
+            <br>
+
+            <label for="agreedTerms"> agreed Terms:
+                <input type="checkbox" id="agreedTerms" name="agreedTerms" placeholder="agreed Terms ">
+
+            </label>
+
+            <br>
+
+            <button class="btn btn-success" type="submit">Criar categoria</button>
+        </form>
+    </div>
+</div>
