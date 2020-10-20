@@ -1,6 +1,161 @@
-<h2>Lista de Categorias</h2>
-<hr>
-<a href="/admin/categorias/add">
+<div class="card">
+    <div class="card-body">
+        
+        <!--- Dados Usuario -->
+        <h2 class="text-center">Users</h2>
+        <hr>
+        <form action="" method="post">
+            <div class="d-flex" style="padding: 0px;">
 
-    <button class="btn btn-success">Nova Categoria</button>
-</a>
+                <div style="width: 50%;border-right: 1px solid black">
+
+                    <div>
+                        <label for="nameClient">
+                            Name:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="nameClient" name="nameClient"
+                                readonly='true'value="{{client.name}}">
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="phoneClient">
+                            Phone:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="phoneClient" name="phoneClient"
+                                readonly='true'  value="{{client.phone}}">
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="emailClient">
+                            Email:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type="email" id="emailClient" name="emailClient"
+                                readonly='true' value={{client.email}}>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="width: 50%;border-left: 1px solid black;padding-left: 30px">
+
+                    <div>
+                        <label for="revenueClient">
+                            Revenue:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type="number" id="revenueClient" name="revenueClient"
+                                readonly='true'  value={{client.revenue}}>
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <label for="isActiveClient">
+                            is Active:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="isActiveClient" name="isActiveClient"
+                                readonly='true'  value={{client.isActive}}>
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <label for="agreedTermsClient">
+                            Agreed Terms:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="isActiveClient" name="isActiveClient"
+                                readonly='true' value={{client.agreedTerms}}>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <input type="button" id="editToSend" value="Editar" onclick='teste()'>
+        </form>
+    </div>
+</div>
+<br>
+
+<div class="card">
+    <div class="card-body">
+        <!--- Dados Oportunidadoes do usuario -->
+        <h2 class="text-center">Opportunities</h2>
+        {{#each opt}}
+        <hr>
+        <form action="" method="post">
+            <h3 class="text-center">{{this.name}}</h3>
+            <div class="d-flex" style="padding: 20px;">
+                <div style="width: 50%;border-right: 1px solid black">
+                    <div>
+                        <label for="optLimit">
+                            Limit:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="optLimit" name="optLimit"
+                                readonly='true' value={{this.limit}}>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="optInterest">
+                            Interest:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="optInterest" name="optInterest"
+                                readonly='true' value={{this.interest}}>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="width: 50%;border-left: 1px solid black;padding-left: 40px">
+                    <div>
+                        <label for="optTerm">
+                            Term:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="optTerm" name="optTerm" readonly='true'
+                                value={{this.term}}>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="optIsActive">
+                            is Active:
+                        </label>
+                        <div>
+                            <input class="form-control-plaintext" type='txt' id="optIsActive" name="optIsActive"
+                                readonly='true' value={{this.isActive}}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <input type="button" id="editToSend" value="Editar" onclick='teste()'>
+        </form>
+        {{/each}}
+    </div>
+</div>
+
+<script>
+    function teste() {
+        var btn = document.getElementById('editToSend')
+        if (btn.value == 'Enviar') {
+            btn.type = 'submit'
+        } else if (btn.type == 'button') {
+            btn.value = 'Enviar'
+            var obj = document.getElementsByTagName('input')
+
+            for (const i in obj) {
+
+                obj[i].readOnly = false
+                obj[i].className = ''
+                console.log(obj[i])
+            }
+        }
+    }
+</script>
