@@ -1,10 +1,10 @@
 <div class="card">
     <div class="card-body">
-        
+
         <!--- Dados Usuario -->
         <h2 class="text-center">Users</h2>
         <hr>
-        <form action="" method="post">
+        <form action="" method="post" id="formEdit_Client">
             <div class="d-flex" style="padding: 0px;">
 
                 <div style="width: 50%;border-right: 1px solid black">
@@ -15,7 +15,7 @@
                         </label>
                         <div>
                             <input class="form-control-plaintext" type='txt' id="nameClient" name="nameClient"
-                                readonly='true'value="{{client.name}}">
+                                readonly='true' value="{{client.name}}">
                         </div>
 
                     </div>
@@ -25,7 +25,7 @@
                         </label>
                         <div>
                             <input class="form-control-plaintext" type='txt' id="phoneClient" name="phoneClient"
-                                readonly='true'  value="{{client.phone}}">
+                                readonly='true' value="{{client.phone}}">
                         </div>
 
                     </div>
@@ -48,7 +48,7 @@
                         </label>
                         <div>
                             <input class="form-control-plaintext" type="number" id="revenueClient" name="revenueClient"
-                                readonly='true'  value={{client.revenue}}>
+                                readonly='true' value={{client.revenue}}>
                         </div>
 
                     </div>
@@ -60,7 +60,7 @@
                         </label>
                         <div>
                             <input class="form-control-plaintext" type='txt' id="isActiveClient" name="isActiveClient"
-                                readonly='true'  value={{client.isActive}}>
+                                readonly='true' value={{client.isActive}}>
                         </div>
 
                     </div>
@@ -78,7 +78,14 @@
 
 
             </div>
-            <input type="button" id="editToSend" value="Editar" onclick='teste()'>
+            <div style="text-align: right;padding: 20px">
+
+                <input type="button" class="btn btn-warning btn-xs" id="formEdit_Client" value="Editar"
+                    onclick='editInfo(this)'>
+                <a class="btn btn-danger btn-xs" href="/admin/del/{{client.email}}">Delete
+                </a>
+            </div>
+
         </form>
     </div>
 </div>
@@ -87,10 +94,75 @@
 <div class="card">
     <div class="card-body">
         <!--- Dados Oportunidadoes do usuario -->
-        <h2 class="text-center">Opportunities</h2>
+        <h2 class="text-center">Opportunities </h2>
+
+        <div style="text-align: center;padding: 20px">
+            <button onclick="newForm()" class="btn btn-primary pull-right h2">
+                add new
+            </button>
+        </div>
+        <!-- Formulario de Adcionar Opportunities -->
+        <form action="/admin/newOpt" method="post" id="formNew" style="display: none;">
+
+            <div class="d-flex" style="padding: 20px;">
+                <div style="width: 50%;border-right: 1px solid black">
+                    <input type="txt" value="{{client.email}}" id="KeyEmail" name="KeyEmail">
+                    <div>
+                        <label for="optName">
+                            name:
+                        </label>
+                        <div>
+                            <input type='text' id="optName" name="optName">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="optLimit">
+                            Limit:
+                        </label>
+                        <div>
+                            <input type='number' id="optLimit" name="optLimit">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="optInterest">
+                            Interest:
+                        </label>
+                        <div>
+                            <input type='number' id="optInterest" name="optInterest">
+                        </div>
+                    </div>
+
+                </div>
+                <div style="width: 50%;border-left: 1px solid black;padding-left: 40px">
+                    <div>
+                        <label for="optTerm">
+                            Term:
+                        </label>
+                        <div>
+                            <input type='number' id="optTerm" name="optTerm">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="optIsActive">
+                            is Active: <input type="checkbox" id="optIsActive" name="optIsActive">
+                        </label>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;padding: 20px">
+                <button type="submit" class="btn btn-success btn-xs">Submit</button>
+            </div>
+
+
+        </form>
+
+
         {{#each opt}}
         <hr>
-        <form action="" method="post">
+        <form action="" method="post" id="formEdit_{{this.name}}">
             <h3 class="text-center">{{this.name}}</h3>
             <div class="d-flex" style="padding: 20px;">
                 <div style="width: 50%;border-right: 1px solid black">
@@ -99,7 +171,7 @@
                             Limit:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="optLimit" name="optLimit"
+                            <input class="form-control-plaintext" type='number' id="optLimit" name="optLimit"
                                 readonly='true' value={{this.limit}}>
                         </div>
                     </div>
@@ -108,7 +180,7 @@
                             Interest:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="optInterest" name="optInterest"
+                            <input class="form-control-plaintext" type='number' id="optInterest" name="optInterest"
                                 readonly='true' value={{this.interest}}>
                         </div>
                     </div>
@@ -120,8 +192,8 @@
                             Term:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="optTerm" name="optTerm" readonly='true'
-                                value={{this.term}}>
+                            <input class="form-control-plaintext" type='number' id="optTerm" name="optTerm"
+                                readonly='true' value={{this.term}}>
                         </div>
                     </div>
                     <div>
@@ -135,27 +207,55 @@
                     </div>
                 </div>
             </div>
-             <input type="button" id="editToSend" value="Editar" onclick='teste()'>
+            <div style="text-align: right;padding: 20px">
+                <input type="button" class="btn btn-warning btn-xs" id="formEdit_{{this.name}}" value="Editar"
+                    onclick="editInfo(this)">
+
+                <form action="/admin/delOpt" method="post">
+                    <button type="submit" class="btn btn-danger btn-xs">Delete
+                    </button>
+                    <input type="txt" name="keyDel" id='keyDel' >
+                </form>
+
+            </div>
+
         </form>
         {{/each}}
+
     </div>
 </div>
+<script>
+    var keey = document.getElementById('KeyEmail')
+    var deele = document.getElementById('KeyDel')
+    deele.setAttribute('value', '222')
+    alert(deele.value)
+</script>
+
 
 <script>
-    function teste() {
-        var btn = document.getElementById('editToSend')
+    function editInfo(btn) {
+
         if (btn.value == 'Enviar') {
             btn.type = 'submit'
         } else if (btn.type == 'button') {
             btn.value = 'Enviar'
-            var obj = document.getElementsByTagName('input')
-
+            var obj = document.getElementById(`${btn.id}`).getElementsByTagName('input')
             for (const i in obj) {
 
                 obj[i].readOnly = false
                 obj[i].className = ''
+                btn.className = "btn btn-success"
                 console.log(obj[i])
             }
         }
+    }
+</script>
+
+<script>
+    function newForm() {
+
+        var form = document.getElementById('formNew')
+
+        form.style.display = (form.style.display == 'none') ? 'block' : 'none';
     }
 </script>

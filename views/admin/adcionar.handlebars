@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-body">
 
-        <form action="/admin/new" method="post">
+        <form action="/admin/new" method="post" data-toggle="validator">
             <br>
             <h3>Personal data</h3>
             <br>
@@ -15,7 +15,7 @@
             <input type="text" id="email" name="email" placeholder="customer email" class="form-control">
 
             <label for="phone">phone:</label>
-            <input type="text" id="phone" name="phone" placeholder=" customer phone" class="form-control">
+            <input type="text" id="phone" name="phone" placeholder=" customer phone" class="form-control" onchange="$(this).mask('(00) 0000-00009')"  onkeypress="$(this).mask('(00) 0000-00009')" >
 
             <br>
             <h3>
