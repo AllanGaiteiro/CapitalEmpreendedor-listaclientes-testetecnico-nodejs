@@ -4,38 +4,39 @@
         <!--- Dados Usuario -->
         <h2 class="text-center">Users</h2>
         <hr>
-        <form action="" method="post" id="formEdit_Client">
+        <form action="/admin/edit" method="post" id="formEdit_Client">
+            <input type="hidden" name="collection" id="collection" value="users">
             <div class="d-flex" style="padding: 0px;">
 
                 <div style="width: 50%;border-right: 1px solid black">
 
                     <div>
-                        <label for="nameClient">
+                        <label for="name">
                             Name:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="nameClient" name="nameClient"
-                                readonly='true' value="{{client.name}}">
+                            <input class="form-control-plaintext" type='txt' id="name" name="name" readonly='true'
+                                value="{{client.name}}">
                         </div>
 
                     </div>
                     <div>
-                        <label for="phoneClient">
+                        <label for="phone">
                             Phone:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="phoneClient" name="phoneClient"
-                                readonly='true' value="{{client.phone}}">
+                            <input class="form-control-plaintext" type='txt' id="phone" name="phone" readonly='true'
+                                value="{{client.phone}}">
                         </div>
 
                     </div>
                     <div>
-                        <label for="emailClient">
+                        <label for="email">
                             Email:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type="email" id="emailClient" name="emailClient"
-                                readonly='true' value={{client.email}}>
+                            <input class="form-control-plaintext" type="email" id="email" name="email" readonly='true'
+                                value={{client.email}}>
                         </div>
 
                     </div>
@@ -43,11 +44,11 @@
                 <div style="width: 50%;border-left: 1px solid black;padding-left: 30px">
 
                     <div>
-                        <label for="revenueClient">
+                        <label for="revenue">
                             Revenue:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type="number" id="revenueClient" name="revenueClient"
+                            <input class="form-control-plaintext" type="number" id="revenue" name="revenue"
                                 readonly='true' value={{client.revenue}}>
                         </div>
 
@@ -55,22 +56,22 @@
 
                     <div>
 
-                        <label for="isActiveClient">
+                        <label for="isActive">
                             is Active:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="isActiveClient" name="isActiveClient"
+                            <input class="form-control-plaintext" type='txt' id="isActive" name="isActive"
                                 readonly='true' value={{client.isActive}}>
                         </div>
 
                     </div>
                     <div>
 
-                        <label for="agreedTermsClient">
+                        <label for="agreedTerms">
                             Agreed Terms:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="isActiveClient" name="isActiveClient"
+                            <input class="form-control-plaintext" type='txt' id="agreedTerms" name="agreedTerms"
                                 readonly='true' value={{client.agreedTerms}}>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
 <div class="card">
     <div class="card-body">
         <!--- Dados Oportunidadoes do usuario -->
-        <h2 class="text-center">Opportunities </h2>
+        <h2 >Opportunities </h2>
 
         <div style="text-align: center;padding: 20px">
             <button onclick="newForm()" class="btn btn-primary pull-right h2">
@@ -103,48 +104,48 @@
         </div>
         <!-- Formulario de Adcionar Opportunities -->
         <form action="/admin/newOpt" method="post" id="formNew" style="display: none;">
-
+            <input type="hidden" name="collection" id="collection" value="users">
             <div class="d-flex" style="padding: 20px;">
                 <div style="width: 50%;border-right: 1px solid black">
-                    <input type="txt" value="{{client.email}}" id="KeyEmail" name="KeyEmail">
+                    <input type="hidden" value="{{client.email}}" id="KeyEmail" name="KeyEmail">
                     <div>
-                        <label for="optName">
+                        <label for="Name">
                             name:
                         </label>
                         <div>
-                            <input type='text' id="optName" name="optName">
+                            <input type='text'  name="name">
                         </div>
                     </div>
                     <div>
-                        <label for="optLimit">
+                        <label for="limit">
                             Limit:
                         </label>
                         <div>
-                            <input type='number' id="optLimit" name="optLimit">
+                            <input type='number' name="limit">
                         </div>
                     </div>
                     <div>
-                        <label for="optInterest">
+                        <label for="interest">
                             Interest:
                         </label>
                         <div>
-                            <input type='number' id="optInterest" name="optInterest">
+                            <input type='number' name="interest">
                         </div>
                     </div>
 
                 </div>
                 <div style="width: 50%;border-left: 1px solid black;padding-left: 40px">
                     <div>
-                        <label for="optTerm">
+                        <label for="Term">
                             Term:
                         </label>
                         <div>
-                            <input type='number' id="optTerm" name="optTerm">
+                            <input type='number' name="Term">
                         </div>
                     </div>
                     <div>
-                        <label for="optIsActive">
-                            is Active: <input type="checkbox" id="optIsActive" name="optIsActive">
+                        <label for="isActive">
+                            is Active: <input type="checkbox" name="isActive">
                         </label>
                         <div>
 
@@ -162,25 +163,28 @@
 
         {{#each opt}}
         <hr>
-        <form action="" method="post" id="formEdit_{{this.name}}">
-            <h3 class="text-center">{{this.name}}</h3>
+        <form action="/admin/edit" method="post" id="formEdit_{{this.name}}">
+            <input type="hidden" name="collection" value="opportunities">
+            <input type="hidden" name="email" value="{{this.key}}">
+            <input type="hidden" name="name" id="{{this.name}}" value="{{this.name}}">
+            <h3 >{{this.name}}</h3>
             <div class="d-flex" style="padding: 20px;">
                 <div style="width: 50%;border-right: 1px solid black">
                     <div>
-                        <label for="optLimit">
+                        <label for="limit">
                             Limit:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='number' id="optLimit" name="optLimit"
-                                readonly='true' value={{this.limit}}>
+                            <input class="form-control-plaintext" type='number'name="limit" readonly='true'
+                                value={{this.limit}}>
                         </div>
                     </div>
                     <div>
-                        <label for="optInterest">
+                        <label for="interest">
                             Interest:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='number' id="optInterest" name="optInterest"
+                            <input class="form-control-plaintext" type='number'  name="interest"
                                 readonly='true' value={{this.interest}}>
                         </div>
                     </div>
@@ -188,20 +192,20 @@
                 </div>
                 <div style="width: 50%;border-left: 1px solid black;padding-left: 40px">
                     <div>
-                        <label for="optTerm">
+                        <label for="Term">
                             Term:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='number' id="optTerm" name="optTerm"
-                                readonly='true' value={{this.term}}>
+                            <input class="form-control-plaintext" type='number'  name="term" readonly='true'
+                                value={{this.term}}>
                         </div>
                     </div>
                     <div>
-                        <label for="optIsActive">
+                        <label for="isActive">
                             is Active:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="optIsActive" name="optIsActive"
+                            <input class="form-control-plaintext" type='txt'  name="isActive"
                                 readonly='true' value={{this.isActive}}>
                         </div>
                     </div>
@@ -211,11 +215,9 @@
                 <input type="button" class="btn btn-warning btn-xs" id="formEdit_{{this.name}}" value="Editar"
                     onclick="editInfo(this)">
 
-                <form action="/admin/delOpt" method="post">
-                    <button type="submit" class="btn btn-danger btn-xs">Delete
-                    </button>
-                    <input type="txt" name="keyDel" id='keyDel' >
-                </form>
+
+                <a href='#' id="{{this.name}}"  class="btn btn-danger btn-xs" onclick="deletarOpt(this)" >Delete</a>
+
 
             </div>
 
@@ -224,38 +226,3 @@
 
     </div>
 </div>
-<script>
-    var keey = document.getElementById('KeyEmail')
-    var deele = document.getElementById('KeyDel')
-    deele.setAttribute('value', '222')
-    alert(deele.value)
-</script>
-
-
-<script>
-    function editInfo(btn) {
-
-        if (btn.value == 'Enviar') {
-            btn.type = 'submit'
-        } else if (btn.type == 'button') {
-            btn.value = 'Enviar'
-            var obj = document.getElementById(`${btn.id}`).getElementsByTagName('input')
-            for (const i in obj) {
-
-                obj[i].readOnly = false
-                obj[i].className = ''
-                btn.className = "btn btn-success"
-                console.log(obj[i])
-            }
-        }
-    }
-</script>
-
-<script>
-    function newForm() {
-
-        var form = document.getElementById('formNew')
-
-        form.style.display = (form.style.display == 'none') ? 'block' : 'none';
-    }
-</script>
