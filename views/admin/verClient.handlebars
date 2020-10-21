@@ -95,7 +95,7 @@
 <div class="card">
     <div class="card-body">
         <!--- Dados Oportunidadoes do usuario -->
-        <h2 >Opportunities </h2>
+        <h2 class="text-center">Opportunities </h2>
 
         <div style="text-align: center;padding: 20px">
             <button onclick="newForm()" class="btn btn-primary pull-right h2">
@@ -104,10 +104,10 @@
         </div>
         <!-- Formulario de Adcionar Opportunities -->
         <form action="/admin/newOpt" method="post" id="formNew" style="display: none;">
-            <input type="hidden" name="collection" id="collection" value="users">
+            <input type="hidden" name="collection" id="collection" value="opportunities">
             <div class="d-flex" style="padding: 20px;">
                 <div style="width: 50%;border-right: 1px solid black">
-                    <input type="hidden" value="{{client.email}}" id="KeyEmail" name="KeyEmail">
+                    <input type="hidden" value="{{client.email}}" name="email">
                     <div>
                         <label for="Name">
                             name:
@@ -136,11 +136,11 @@
                 </div>
                 <div style="width: 50%;border-left: 1px solid black;padding-left: 40px">
                     <div>
-                        <label for="Term">
+                        <label for="term">
                             Term:
                         </label>
                         <div>
-                            <input type='number' name="Term">
+                            <input type='number' name="term">
                         </div>
                     </div>
                     <div>
@@ -165,9 +165,9 @@
         <hr>
         <form action="/admin/edit" method="post" id="formEdit_{{this.name}}">
             <input type="hidden" name="collection" value="opportunities">
-            <input type="hidden" name="email" value="{{this.key}}">
+            <input type="hidden" name="email" id="keyEmail" value="{{this.key}}">
             <input type="hidden" name="name" id="{{this.name}}" value="{{this.name}}">
-            <h3 >{{this.name}}</h3>
+            <h3 class="text-center">{{this.name}}</h3>
             <div class="d-flex" style="padding: 20px;">
                 <div style="width: 50%;border-right: 1px solid black">
                     <div>
@@ -192,7 +192,7 @@
                 </div>
                 <div style="width: 50%;border-left: 1px solid black;padding-left: 40px">
                     <div>
-                        <label for="Term">
+                        <label for="term">
                             Term:
                         </label>
                         <div>

@@ -92,7 +92,7 @@ router.post('/new', function (req, res, next) {
     isActive: (req.body.isActive == 'on') ? true : false,
     phone: req.body.phone,
     revenue: Number(req.body.revenue),
-    agreedTerms: (req.body.agreedTerms == 'on') ? true : false
+    agreedTerms: (req.body.agreedTerms == 'on') ? true : false,
 
   }).then(
     () => {
@@ -112,20 +112,22 @@ router.post('/new', function (req, res, next) {
 router.post('/newOpt', function (req, res, next) {
 
   /// pegar oportunidades ja cadastradas e acrescentando nova  
-  func.getOne('opportunities', req.body.KeyEmail).then(
+  func.getOne(req.body.collection, req.body.email).then(
     (e) => {
       e.opportunities.push(
         {
-          name: req.body.optName,
-          limit: Number(req.body.optLimit),
-          isActive: (req.body.optIsActive == 'on') ? true : false,
-          interest: Number(req.body.optInterest),
-          term: Number(req.body.optTerm),
+          name: req.body.name,
+          limit: Number(req.body.limit),
+          isActive: (req.body.isActive == 'on') ? true : false,
+          interest: Number(req.body.interest),
+          term: Number(req.body.term),
         }
       )
-      func.set('opportunities', req.body.KeyEmail, e)
+      func.set(req.body.collection, req.body.email, e).then(
+        res.render('admin/confirm', { acao: req.body.collection })
+      )
 
-      res.render('admin/confirm', { acao: 'opportunities' })
+      
     }
   )
 }
@@ -139,9 +141,10 @@ router.get('/del/:keydel', function (req, res, next) {
 })
 
 ///// del opportunities
-router.get('/delopt/:keyEmail/:name', function (req, res, next) {
-
-  var key = req.params.keyEmail
+router.get('/delopt/:email/:name', function (req, res, next) {
+  
+  console.log('email: '+  req.params.email + '| name:' + req.params.name )
+  var key = req.params.email
   func.getOne('opportunities', key).then(
     (e) => {
       var opt = []

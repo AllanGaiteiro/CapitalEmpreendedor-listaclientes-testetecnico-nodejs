@@ -1,5 +1,13 @@
 {
   "users": {
+    "cliente1@example.com": {
+      "name": "Cliente 1",
+      "email": "cliente1@example.com",
+      "isActive": true,
+      "phone": "(19) 99999-9999",
+      "revenue": 1000000,
+      "agreedTerms": true
+    },
     "cliente2@example.com": {
       "name": "Cliente 2",
       "email": "cliente2@example.com",
@@ -16,6 +24,14 @@
       "revenue": 150000,
       "agreedTerms": true
     },
+    "cliente4@example.com": {
+      "name": "Cliente 4",
+      "email": "cliente4@example.com",
+      "isActive": false,
+      "phone": "(19) 99999-3333",
+      "revenue": 10000000,
+      "agreedTerms": true
+    },
     "cliente5@example.com": {
       "name": "Cliente 5",
       "email": "cliente5@example.com",
@@ -27,16 +43,22 @@
     "allangaiteirofoe@gmail.com": {
       "name": "allan",
       "email": "allangaiteirofoe@gmail.com",
-      "isActive": false,
+      "isActive": true,
       "phone": "(19) 9993-33358",
-      "revenue": "10000",
-      "agreedTerms": true,
-      "collection": "users"
+      "revenue": 10000,
+      "agreedTerms": true
     }
   },
   "opportunities": {
     "cliente1@example.com": {
       "opportunities": [
+        {
+          "name": "Institution 1",
+          "limit": 50000,
+          "interest": 0.045,
+          "term": 60,
+          "isActive": true
+        },
         {
           "name": "Instituição 3",
           "limit": 100000,
@@ -77,6 +99,13 @@
           "isActive": true
         },
         {
+          "name": "Instituição 2",
+          "limit": 2000000,
+          "interest": 0.04,
+          "term": 36,
+          "isActive": true
+        },
+        {
           "name": "Instituição 3",
           "limit": 500000,
           "interest": 0.025,
@@ -89,7 +118,22 @@
       "opportunities": []
     },
     "allangaiteirofoe@gmail.com": {
-      "opportunities": []
+      "opportunities": [
+        {
+          "name": "sono",
+          "limit": 1000,
+          "isActive": true,
+          "interest": 12,
+          "term": 1
+        },
+        {
+          "name": "vida",
+          "limit": 1111,
+          "isActive": true,
+          "interest": 111,
+          "term": 21
+        }
+      ]
     }
   }
 }
