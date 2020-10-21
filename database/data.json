@@ -39,14 +39,6 @@
       "phone": "(19) 99999-4444",
       "revenue": 350000,
       "agreedTerms": false
-    },
-    "allangaiteirofoe@gmail.com": {
-      "name": "allan",
-      "email": "allangaiteirofoe@gmail.com",
-      "isActive": true,
-      "phone": "(19) 9993-33358",
-      "revenue": 10000,
-      "agreedTerms": true
     }
   },
   "opportunities": {
@@ -58,8 +50,7 @@
           "interest": 0.045,
           "term": 60,
           "isActive": true
-        },
-        {
+        },{
           "name": "Instituição 3",
           "limit": 100000,
           "interest": 0.035,
@@ -68,7 +59,7 @@
         }
       ]
     },
-    "cliente2@example.com": {
+    "cliente2@example.com": { 
       "opportunities": []
     },
     "cliente3@example.com": {
@@ -79,8 +70,7 @@
           "interest": 0.05,
           "term": 36,
           "isActive": true
-        },
-        {
+        },{
           "name": "Instituição 3",
           "limit": 75000,
           "interest": 0.053,
@@ -96,16 +86,14 @@
           "limit": 5000000,
           "interest": 0.047,
           "term": 60,
-          "isActive": true
-        },
-        {
+          "isActive": true      
+        },{
           "name": "Instituição 2",
           "limit": 2000000,
           "interest": 0.04,
           "term": 36,
           "isActive": true
-        },
-        {
+        },{
           "name": "Instituição 3",
           "limit": 500000,
           "interest": 0.025,
@@ -116,24 +104,6 @@
     },
     "cliente5@example.com": {
       "opportunities": []
-    },
-    "allangaiteirofoe@gmail.com": {
-      "opportunities": [
-        {
-          "name": "sono",
-          "limit": 1000,
-          "isActive": true,
-          "interest": 12,
-          "term": 1
-        },
-        {
-          "name": "vida",
-          "limit": 1111,
-          "isActive": true,
-          "interest": 111,
-          "term": 21
-        }
-      ]
     }
   }
 }
