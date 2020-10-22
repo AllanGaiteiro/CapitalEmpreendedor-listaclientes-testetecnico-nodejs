@@ -5,11 +5,14 @@
 Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. The server will **not** automatically reload if you change any of the source files.
 
 
-## Teste Técnico - Desenvolvimento
+## Inicializção do Arquivo
 
-# 1. introdução
+    Projeto inicia no http://localhost:3000/admin
+    A Navegação é feita com <botões> e com um elemento <nav>.
 
-# 2. O Desafio
+
+
+#   O Desafio
 
     O projeto proposto consiste em elaborar uma funcionalidade de visualização de clientes e
     suas oportunidades disponíveis para cada um deles, podendo estas também serem
@@ -24,7 +27,14 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
     ○ Uma API que implementa as chamadas necessárias para uso pelo front-end,
     utilizando obrigatoriamente as funções fornecidas para acesso e
     manipulação dos dados.
-# 3. Especificações e dicas
+
+#   introdução
+    Apos o Recebimento do projeto no dia 13, notei que a ideia inicial era desenvolver em dois frameworks
+    Angular: onde nunca desenvolvi
+    Express: onde acredito ter uma facilidade maior
+    Optei por seguir a opçao apontada em [Especificões e dicas] da possibilidade de desenvolver de forma nativa usando o mesmo projeto Express 
+    
+#   Especificações e dicas
     Para a realização do teste você receberá dois repositórios:
     
     ● Um projeto Angular iniciado e com modificações mínimas.
@@ -47,17 +57,14 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
         ○ A cópia de código, em parte ou totalmente, de testes realizados por outros
         candidatos acarretará na penalização do candidato.
 
-## Inicio
-
-Apos o Recebimento do projeto no dia 13, notei que a ideia inicial era desenvolver em dois frameworks
-Angular: onde nunca desenvolvi
-Express: onde acredito ter uma facilidade maior
-Optei por seguir a opçao apontada em [Especificões e dicas] da possibilidade de desenvolver de forma nativa usando o mesmo projeto Express 
 
 ## Dependencias
 
 Express
 
-Cockie-Parser
+body-Parser
 
 Morgan
+
+handlebars
+
