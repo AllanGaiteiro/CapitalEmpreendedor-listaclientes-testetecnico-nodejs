@@ -88,7 +88,6 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
 
             Para uma pessoa sem visão ela fica sem acesso ao nome de cada cliente na lista
 
-            Para Pessoas de Baixa visão falta alguma diferença nos item em focus.
 
 
 
