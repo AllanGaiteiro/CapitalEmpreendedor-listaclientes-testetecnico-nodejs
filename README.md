@@ -61,10 +61,37 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
     Resumindo não usei angular pois não avia tempo de aprender, porem estou a disposição para aprender o angular 
 
     Visual: 
+        
+        Os Arquivos de Design inicial estão na pasta Design, eles sao a base do visual do site.
 
-    Os Arquivos de Design inicial estão na pasta Design, eles sao a base do visual do site.
+        Vale resaltar a base.
 
-    Vale resaltar a base.
+    Linguagen do Site: Inglês
+        
+        o arquivo fornecido estava com todos os itens em inglês então optei por dar continuidade.
+    
+    Tradutor
+        Chrome: traduzindo a  pagina perfeitamente
+        
+        Mozila: presisa baixar extensão pra traduzir
+
+        Edge: traduzindo a  pagina perfeitamente
+
+    
+    Acessibilidade:
+
+        A leitura da pagina por aplicativos de audio:
+            A leitura dos componentes esta quase perfeita.
+    
+        Navegação:
+            A navegaçao via tab esta boa, o unico problema é que não esta lendo os valores da lista antes de ir para o botão
+
+            Para uma pessoa sem visão ela fica sem acesso ao nome de cada cliente na lista
+
+            Para Pessoas de Baixa visão falta alguma diferença nos item em focus.
+
+
+
 ## Dependencias
 
 Express

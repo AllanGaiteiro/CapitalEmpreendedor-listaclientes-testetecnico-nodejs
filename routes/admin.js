@@ -54,12 +54,12 @@ const Ver = router.post('/ver', function (req, res, next) {
               limit: oportClient.opportunities[i].limit,
               interest: oportClient.opportunities[i].interest,
               term: oportClient.opportunities[i].term,
-              isActive: (oportClient.opportunities[i].isActive == true)? 'Sim': 'Nao',
+              isActive: (oportClient.opportunities[i].isActive == true)? 'Yes': 'Nao',
             })
           }
           ////// formatasao visual
-          client.isActive = (client.isActive == true)? "Sim": "Nao" 
-          client.agreedTerms = (client.agreedTerms == true)? "Sim": "Nao"
+          client.isActive = (client.isActive == true)? "Yes": "Nao" 
+          client.agreedTerms = (client.agreedTerms == true)? "Yes": "Nao"
           
           ///// renderizar pagina 
           res.render('admin/verClient',
