@@ -79,12 +79,11 @@
 
 
             </div>
-            <div style="text-align: right;padding: 20px">
+            <div style="text-align: right;padding: 20px">    
 
                 <input type="button" class="btn btn-warning btn-xs" id="formEdit_Client" value="Editar"
                     onclick='editInfo(this)'>
-                <a class="btn btn-danger btn-xs" href="/admin/del/{{client.email}}">Delete
-                </a>
+                <a href='#' id="{{client.name}}" class="btn btn-danger btn-xs" onclick="deletarClient(this)">Delete</a>
             </div>
 
         </form>

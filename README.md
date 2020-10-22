@@ -58,6 +58,8 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
     Express: onde acredito ter uma facilidade maior
     Optei por seguir a opçao apontada em [Especificões e dicas] da possibilidade de desenvolver de forma nativa usando o mesmo projeto Express 
     
+    Resumindo não usei angular pois não avia tempo de aprender, porem estou a disposição para aprender o angular 
+
     Visual: 
 
     Os Arquivos de Design inicial estão na pasta Design, eles sao a base do visual do site.
@@ -72,4 +74,22 @@ body-Parser
 Morgan
 
 handlebars
+
+## Bugs
+
+* Bugs 01: Deletar Oportunidades: logo depois de excluir uma oportunidade voce deve carregar a pagina do cliente mesmo se você tiver usando a opção voltar pagina
+
+* Bugs 02: Deletar Usuario: Se voce voltar a pagina depois de excluir o usuario, vai mostra o usuario ainda
+
+## futuras melhorias
+
+* Implementação do responsivo
+
+* Acrescentar mais opções de acessibilidade( apesar da movimentaçao do teclado ser bem agil )
+
+* Implementação de teclas atalhos
+
+* atualização para um html semantico
+
+* Correção dos Bugs
 
