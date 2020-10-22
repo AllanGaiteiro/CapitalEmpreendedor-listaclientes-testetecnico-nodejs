@@ -38,7 +38,7 @@ router.get('/lista', function (req, res, next) {
 });
 
 //// visualizar cliente
-router.post('/ver', function (req, res, next) {
+const Ver = router.post('/ver', function (req, res, next) {
   //// Chamando dados cliente  usando a key pasada na lista
   func.getOne('users', req.body.key).then(
     (client) => {
@@ -91,7 +91,7 @@ router.post('/new', function (req, res, next) {
     email: req.body.email,
     isActive: (req.body.isActive == 'on') ? true : false,
     phone: req.body.phone,
-    revenue: Number(req.body.revenue),
+    revenue: Number(req.body.revenue.replace(',', '.')),
     agreedTerms: (req.body.agreedTerms == 'on') ? true : false,
 
   }).then(
@@ -114,12 +114,15 @@ router.post('/newOpt', function (req, res, next) {
   /// pegar oportunidades ja cadastradas e acrescentando nova  
   func.getOne(req.body.collection, req.body.email).then(
     (e) => {
+
+      ///// corrigindo possivel erro no valor float
+
       e.opportunities.push(
         {
           name: req.body.name,
-          limit: Number(req.body.limit),
+          limit: Number(req.body.limit.replace(',', '.')),
           isActive: (req.body.isActive == 'on') ? true : false,
-          interest: Number(req.body.interest),
+          interest: Number(req.body.interest.replace(',', '.')),
           term: Number(req.body.term),
         }
       )

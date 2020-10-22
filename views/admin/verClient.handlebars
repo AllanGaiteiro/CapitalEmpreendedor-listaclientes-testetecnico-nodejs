@@ -4,7 +4,7 @@
         <!--- Dados Usuario -->
         <h2 class="text-center">Users</h2>
         <hr>
-        <form action="/admin/edit" method="post" id="formEdit_Client">
+        <form  action="/admin/edit" method="post" data-toggle="validator" id="formEdit_Client">
             <input type="hidden" name="collection" id="collection" value="users">
             <div class="d-flex" style="padding: 0px;">
 
@@ -15,7 +15,7 @@
                             Name:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="name" name="name" readonly='true'
+                            <input class="form-control-plaintext" type='text' id="name" name="name" readonly='true'
                                 value="{{client.name}}">
                         </div>
 
@@ -25,7 +25,7 @@
                             Phone:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="phone" name="phone" readonly='true'
+                            <input class="form-control-plaintext" type='text' id="phone" name="phone" readonly='true'
                                 value="{{client.phone}}">
                         </div>
 
@@ -60,7 +60,7 @@
                             is Active:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="isActive" name="isActive"
+                            <input class="form-control-plaintext" type='text' id="isActive" name="isActive"
                                 readonly='true' value={{client.isActive}}>
                         </div>
 
@@ -71,7 +71,7 @@
                             Agreed Terms:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt' id="agreedTerms" name="agreedTerms"
+                            <input class="form-control-plaintext" type="text" id="agreedTerms" name="agreedTerms"
                                 readonly='true' value={{client.agreedTerms}}>
                         </div>
                     </div>
@@ -96,14 +96,13 @@
     <div class="card-body">
         <!--- Dados Oportunidadoes do usuario -->
         <h2 class="text-center">Opportunities </h2>
-
         <div style="text-align: center;padding: 20px">
-            <button onclick="newForm()" class="btn btn-primary pull-right h2">
+            <button onclick="newForm()" class="btn btn-primary btn-lg btn-block">
                 add new
             </button>
         </div>
         <!-- Formulario de Adcionar Opportunities -->
-        <form action="/admin/newOpt" method="post" id="formNew" style="display: none;">
+        <form action="/admin/newOpt" method="post" id="formNew" data-toggle="validator" style="display: none;">
             <input type="hidden" name="collection" id="collection" value="opportunities">
             <div class="d-flex" style="padding: 20px;">
                 <div style="width: 50%;border-right: 1px solid black">
@@ -113,7 +112,7 @@
                             name:
                         </label>
                         <div>
-                            <input type='text'  name="name">
+                            <input type='text' name="name">
                         </div>
                     </div>
                     <div>
@@ -129,7 +128,7 @@
                             Interest:
                         </label>
                         <div>
-                            <input type='number' name="interest">
+                            <input type="text" type='txt' name="interest">
                         </div>
                     </div>
 
@@ -163,7 +162,7 @@
 
         {{#each opt}}
         <hr>
-        <form action="/admin/edit" method="post" id="formEdit_{{this.name}}">
+        <form action="/admin/edit" method="post" id="formEdit_{{this.name}}" data-toggle="validator">
             <input type="hidden" name="collection" value="opportunities">
             <input type="hidden" name="email" id="keyEmail" value="{{this.key}}">
             <input type="hidden" name="name" id="{{this.name}}" value="{{this.name}}">
@@ -175,7 +174,7 @@
                             Limit:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='number'name="limit" readonly='true'
+                            <input class="form-control-plaintext" type='number' name="limit" readonly='true'
                                 value={{this.limit}}>
                         </div>
                     </div>
@@ -184,8 +183,8 @@
                             Interest:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='number'  name="interest"
-                                readonly='true' value={{this.interest}}>
+                            <input class="form-control-plaintext" type='text' name="interest" readonly='true'
+                                value={{this.interest}}>
                         </div>
                     </div>
 
@@ -196,7 +195,7 @@
                             Term:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='number'  name="term" readonly='true'
+                            <input class="form-control-plaintext" type='number' name="term" readonly='true'
                                 value={{this.term}}>
                         </div>
                     </div>
@@ -205,8 +204,8 @@
                             is Active:
                         </label>
                         <div>
-                            <input class="form-control-plaintext" type='txt'  name="isActive"
-                                readonly='true' value={{this.isActive}}>
+                            <input class="form-control-plaintext" type='txt' name="isActive" readonly='true'
+                                value={{this.isActive}}>
                         </div>
                     </div>
                 </div>
@@ -216,7 +215,7 @@
                     onclick="editInfo(this)">
 
 
-                <a href='#' id="{{this.name}}"  class="btn btn-danger btn-xs" onclick="deletarOpt(this)" >Delete</a>
+                <a href='#' id="{{this.name}}" class="btn btn-danger btn-xs" onclick="deletarOpt(this)">Delete</a>
 
 
             </div>
