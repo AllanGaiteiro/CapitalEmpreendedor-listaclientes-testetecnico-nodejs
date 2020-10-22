@@ -1,14 +1,14 @@
 # CE Test - Web Server
 
-## Running the server
-
-Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. The server will **not** automatically reload if you change any of the source files.
-
 
 ## Inicializção do Arquivo
 
-    Projeto inicia no http://localhost:3000/admin
+    * Execute o comando `npm start` ou `yarn start` no terminal da pasta do projeto
+
+    * Abrir Navegador em http://localhost:3000/admin
     A Navegação é feita com <botões> e com um elemento <nav>.
+
+    A rota `http://localhost:3000/` nao tem nada no momento  entao nao abra nela  
 
 
 
@@ -87,8 +87,6 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
             A navegaçao via tab esta boa, o unico problema é que não esta lendo os valores da lista antes de ir para o botão
 
             Para uma pessoa sem visão ela fica sem acesso ao nome de cada cliente na lista
-
-
 
 
 ## Dependencias
