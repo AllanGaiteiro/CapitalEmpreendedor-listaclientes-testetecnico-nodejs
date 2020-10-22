@@ -58,6 +58,11 @@ Run `npm start` or `yarn start` to run the server on `http://localhost:3000/`. T
     Express: onde acredito ter uma facilidade maior
     Optei por seguir a opçao apontada em [Especificões e dicas] da possibilidade de desenvolver de forma nativa usando o mesmo projeto Express 
     
+    Visual: 
+
+    Os Arquivos de Design inicial estão na pasta Design, eles sao a base do visual do site.
+
+    Vale resaltar a base.
 ## Dependencias
 
 Express
