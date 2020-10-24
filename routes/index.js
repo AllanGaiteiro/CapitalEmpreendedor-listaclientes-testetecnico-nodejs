@@ -6,10 +6,10 @@ const router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.send({ message: "OK" });
+  res.send('Va para a pagina /admin');
 });
 
-  //// acrecentei rotas basicas
+  //// acrecentei rotas basicas porem nao cheguei a usar
   router.get('/lista', function(req, res, next) {
     res.render('public/lista', {users: func.getAll('users')}, console.log(func.getAll('users')));
   });
