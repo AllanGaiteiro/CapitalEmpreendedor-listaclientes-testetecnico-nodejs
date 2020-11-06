@@ -3,7 +3,7 @@
 projeto hospedado  no  link abaixo:
 
 ````
-https://github.com/AllanGaiteiro/CE--Teste-Tecnico.git
+https://ce-teste-tecnico.allangaiteiro.repl.co/
 ````
 
 ## Inicializção do Arquivo
